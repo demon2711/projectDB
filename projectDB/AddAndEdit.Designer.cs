@@ -114,6 +114,7 @@
             this.Edit.TabIndex = 2;
             this.Edit.Text = "Изменить";
             this.Edit.UseVisualStyleBackColor = true;
+            this.Edit.Click += new System.EventHandler(this.Edit_Click);
             // 
             // Delete
             // 
