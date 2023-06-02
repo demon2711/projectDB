@@ -21,6 +21,7 @@ namespace projectDB
             search = new Search();
             addAndEdit = new AddAndEdit();
             Application.Run(search);
+            
         }
     }
 }
