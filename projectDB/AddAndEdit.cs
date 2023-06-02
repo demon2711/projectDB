@@ -21,7 +21,7 @@ namespace projectDB
         SQLiteConnection con;
         SQLiteCommand cmd;
         SQLiteDataReader dr;
-
+        string NowNumber;
 
         private void data_show()
         {
@@ -219,12 +219,10 @@ namespace projectDB
             string Allowance1 = toleranceT.Text;
             string Allowance2 = toleranceTime.Text;
 
-            var connection = new SQLiteConnection(cs);
-            connection.Open();
-            var command = new SQLiteCommand(connection);
+            
 
 
-            cmd.Parameters.AddWithValue("@Id", Id);
+            cmd.Parameters.AddWithValue("@Id", NowNumber);
             cmd.Parameters.AddWithValue("@ObjectDB", ObjectDB);
             cmd.Parameters.AddWithValue("@SourceDB", SourceDB);
             cmd.Parameters.AddWithValue("@FreqFrom", FreqFrom);
@@ -254,6 +252,15 @@ namespace projectDB
 
             cmd.Parameters.AddWithValue("@Allowance1", Allowance1);
             cmd.Parameters.AddWithValue("@Allowance2", Allowance2);
+        }
+
+        private void DataGridCellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataDB.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            {
+                dataDB.CurrentRow.Selected = true;
+                NowNumber = e.RowIndex.ToString();
+            }
         }
     }
 }

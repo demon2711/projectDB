@@ -103,8 +103,10 @@
             this.dataDB.Location = new System.Drawing.Point(12, 41);
             this.dataDB.Name = "dataDB";
             this.dataDB.ReadOnly = true;
+            this.dataDB.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataDB.Size = new System.Drawing.Size(243, 150);
             this.dataDB.TabIndex = 1;
+            this.dataDB.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridCellClick);
             // 
             // Edit
             // 
